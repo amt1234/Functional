@@ -11,7 +11,11 @@ public class rec {
 	}
 
 	private static int sumOfArray(int[] a, int amt) {
-		
+		for (int i=0;i<a.length;i++) {
+			if (a[i]>amt) {
+				
+			}
+		}
 		return 1;
 	}
 	

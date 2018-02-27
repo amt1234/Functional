@@ -7,30 +7,19 @@ import com.bridgeit.utility.Utility;
 
 public class Twodarray9 {
 
-	public static void main(String[] args) 
-	{
+	public static void main(String[] args) {
 		int m;
 		int n;
-		Scanner scanner=new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter the m");
-		m=scanner.nextInt();
-		
+		m = scanner.nextInt();
+
 		System.out.println("Enter the n");
-		n=scanner.nextInt();
+		n = scanner.nextInt();
+
 		
-		Utility utility=new Utility();
-		utility.twodarray(m, n);
 		
-	/*	public static <T> void printArray(T[] t)
-		{
-			for(int i=0;i<t.length;i++)
-			{
-				printwriter.write(t[i]+" ");
-			}
-			printwriter.println();
-			
-		}*/
-		
+		Utility.twodarray(m, n);
 		scanner.close();
 	}
 

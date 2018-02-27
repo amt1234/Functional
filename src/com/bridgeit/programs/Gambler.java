@@ -21,11 +21,12 @@ public class Gambler {
 		System.out.println("enter time");
 		time=scanner.nextInt();
 		
-		 int won = 0,loss = 0;
+		/* int won = 0,loss = 0;
 		   int beat = 0;
-		  
+		  */
 		
-		Utility utility =new Utility();
+
+		Utility utility=new Utility();
 		utility.gambler(stake, goal, time);
 		scanner.close();
 	}

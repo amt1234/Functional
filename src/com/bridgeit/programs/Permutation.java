@@ -8,12 +8,12 @@ public class Permutation
 	{
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter the String : ");
-		String str=scanner.nextLine();
+		String string=scanner.nextLine();
 		
+		
+		int length=string.length();  
 		Utility utility=new Utility();
-		int n=str.length();
-		
-		utility.permutation1(str,0,n-1);
+		utility.permutation1(string, 0, length-1);
 	}
 	
 }

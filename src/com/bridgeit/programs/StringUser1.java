@@ -9,11 +9,11 @@ public class StringUser1 {
 	public static void main(String[] args) 
 	{
 		Scanner scanner=new Scanner(System.in);
-		String str;
+		String string;
 		System.out.println("enter the username");
-		str=scanner.next();
+		string=scanner.next();
 		Utility utility =new Utility();
-		System.out.println(" "+utility.username(str));
+		System.out.println(" "+utility.username(string));
 		scanner.close();
 
 	}

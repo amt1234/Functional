@@ -14,7 +14,7 @@ public class Flipcoin {
 		time=scanner.nextInt();
 		
 		
-		Utility utility =new Utility();
+		Utility utility=new Utility();
 		utility.flipcoin(time);
 
 	}

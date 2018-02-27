@@ -8,12 +8,13 @@ public class CoupenNo {
 	{
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter how many random numbers do you need to generate distinct coupon number");
-		int coupen_no;
-		coupen_no=scanner.nextInt();
+		int coupen_number;
+		coupen_number=scanner.nextInt();
 		
-		Utility utility =new Utility();
-		utility.coupen(coupen_no);
 		
+
+		Utility utility=new Utility();
+		Utility.coupen(coupen_number);
 		scanner.close();
 		
 		

@@ -17,7 +17,8 @@ public class Distance {
 		System.out.println("enter the y");
 		y=scanner.nextInt();
 		
-		Utility utility =new Utility();
+
+		Utility utility=new Utility();
 		utility.distance(x, y);
 		
 

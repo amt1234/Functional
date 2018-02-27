@@ -13,8 +13,7 @@ public static void main(String args[])
 	year=scanner.nextInt();
 	
 	
-	Utility utility =new Utility();
-	utility.leapyear(year);
+	Utility.leapyear(year);
 	
 	scanner.close();
 }
