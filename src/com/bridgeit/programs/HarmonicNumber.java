@@ -1,22 +1,27 @@
 package com.bridgeit.programs;
 
-import java.util.Scanner;
-
 import com.bridgeit.utility.Utility;
+/******************************************************************************
+
+ *  Purpose: Prints the Nth harmonic number
+ *  
+ *  @author  Poonam
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
 
 public class HarmonicNumber {
 
 	public static void main(String[] args) {
 
-		Scanner scanner=new Scanner(System.in);
 		int number;
+		Utility utility =new Utility();
 		System.out.println("enter the number");
-		number=scanner.nextInt();
+		number=utility.inputInteger();
 		
-		System.out.println(Utility.harmonic(number));
-		//System.out.println();
+		System.out.println(utility.harmonic(number));
 		
-		scanner.close();
 	}
 
 }

@@ -1,18 +1,25 @@
 package com.bridgeit.programs;
-import java.util.*;
 
 import com.bridgeit.utility.Utility;
+/******************************************************************************
+
+ *  Purpose: Print static functions to return all permutation of a String using iterative method and 
+ *  		Recursion method.
+ *  
+ *  @author  Poonam
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
 public class Permutation
 {
 	public static void main(String[] args)
 	{
-		Scanner scanner=new Scanner(System.in);
+		Utility utility =new Utility();
 		System.out.println("Enter the String : ");
-		String string=scanner.nextLine();
-		
+		String string=utility.inputString();
 		
 		int length=string.length();  
-		Utility utility=new Utility();
 		utility.permutation1(string, 0, length-1);
 	}
 	

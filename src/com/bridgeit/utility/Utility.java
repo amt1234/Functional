@@ -4,18 +4,37 @@ import java.io.PrintWriter;
 import java.util.LinkedHashSet;
 import java.util.Random;
 import java.util.Scanner;
-
 import com.bridgeit.programs.Twodarray9;
-
-
 
 public class Utility {
 	String str2;
-	
+	Scanner scanner;
+	public Utility()
+	{
+		scanner=new Scanner(System.in);
+	}
+
+	// INPUT STRING
+	public String inputString() {
+		try {
+			return scanner.next();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return "";
+}
+	// INPUT Integer
+		public int inputInteger() {
+			try {
+				return scanner.nextInt();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+			return 0;
+	}
 
 	/**
 	 * @param string
-	 * 
 	 * @return replace string result
 	 */
 	public static String username(String string) 
@@ -36,48 +55,28 @@ public class Utility {
 	/**
 	 * @param year
 	 * finding that giver year is leap year or not and year should 4 digit
-	 * if divisible by 4,100 then should divisible by 400 
-	 * if 4  but not 100 
-	 * if 4 but not 100,400
 	 */
-	public static void leapyear(int year) {
+	public boolean leapyear(int year) {
 
 		if (Integer.toString(year).length() == 4)
 		{
-			if(year%4==0)
-			{
-				if(year%100==0)
-				{
-					if(year%400==0)
-					{
-						System.out.println("year is leap year");
-					}
-					else
-					{
-						System.out.println("not leap year");
-					}
-				}
-				else
-				{
-					System.out.println("leap year");
-				}
-			}else
-			{
-				System.out.println("not leap year");
-				
-			}
+			if((year%4==0)&&(year%100!=0)||year%400==0)
+				return true;
+			else
+				return false;		
 		}
 	 else 
 	 {
 		System.out.println("Invalid year");
 	 }
-	
+	return false;
 	}
 	
 	/**
 	 * @param number
+	 * @return harmonics of number
 	 */
-	public static float harmonic(int number) {
+	public float harmonic(int number) {
 		float sum = 0;
 		for (int i = 1; i <= number; i++) {
 			sum = sum + (1 / (float) i);
@@ -87,8 +86,9 @@ public class Utility {
 
 	/**
 	 * @param time
+	 * @ Determine filpcoine head and tail
 	 */
-	public static void flipcoin(int time) {
+	public void flipcoin(int time) {
 		int count1 = 0;
 		int count2 = 0;
 
@@ -111,10 +111,10 @@ public class Utility {
 
 	/**
 	 * @param number
+	 * 
 	 */
-	public static void powerOf2(int number) {
+	public void powerOf2(int number) {
 		if (number >= 0 && number < 31) {
-			//int result = (int) Math.pow(2, number);
 
 			for (int i = 0; i < number; i++) {
 
@@ -124,25 +124,34 @@ public class Utility {
 		} else {
 			System.out.println("overflow");
 		}
-
 	}
 
 	/**
 	 * @param number
+	 * Find the prime factorization of N
 	 */
-	public static int fact(int number) {
-		int facts = 1;
-		for(int i=1;i<=number;i++)
-		facts = facts * i;
-		return facts;
-	}
+	
+	public void factor(int number) {
+		  int i;
+		  for (i = 2; i <= number; i++) {
+			  
+	            while (number % i == 0) {
+	                System.out.print(i + "\n");
+	                number= number / i;
+	            }
+	        }
+	 
+	        if (number < 1)
+	        	System.out.println(number);     
+	    }
 
 	/**
 	 * @param stake
 	 * @param goal
 	 * @param time
+	 * Simulates a gambler who start with $stake to reach $goal.
 	 */
-	public static void gambler(int stake, int goal, int time) {
+	public void gambler(int stake, int goal, int time) {
 		int won = 0, loss = 0, beat = 0;
 		
 		for (int i = 0; i <time; i++) {
@@ -174,25 +183,37 @@ public class Utility {
 
 	/**
 	 * @param coupen_number
+	 * Determines random coupen number
 	 */
-	public static void coupen(int coupen_number) {
+	public void coupen(int coupen_number) {
 		LinkedHashSet<Integer> randomnumber = new LinkedHashSet<Integer>();
-		int setvalue;
-		Random r = new Random();
-		for (int i = 1; i <= coupen_number; i++) {
-
-			setvalue = r.nextInt(coupen_number);
+		int count=0;
+		for (int i =0 ; i <coupen_number; i++) 
+		{
+			for(int j=0;j<=i;j++)
+			{
+			int setvalue=((getRandomNumber(1,coupen_number)));
+			count++;
 			randomnumber.add(new Integer(setvalue));
-
+			}
 		}
 		System.out.println(randomnumber + " ");
+		System.out.println(count);
+	}
+	static int getRandomNumber(int min,int max)
+	{
+		
+		Random r = new Random();
+		return r.nextInt((max - min) + 1) + min;
+		
 	}
 
 	/**
 	 * @param x
 	 * @param y
+	 * prints the Euclidean distance from the point (x, y) to the origin (0, 0)
 	 */
-	public static void distance(double x, double y) {
+	public void distance(double x, double y) {
 		double x1 = Math.pow(x, 2);
 		double y1 = Math.pow(y, 2);
 		double result = x1 + y1;
@@ -203,8 +224,9 @@ public class Utility {
 	
 	/**
 	 * @param array
+	 *  counts the   number of triples that sum to exactly 0.
 	 */
-	public static void triples(int array[]) {
+	public void triples(int array[]) {
 		int i, j, k;
 		
 		int triplets = 0;
@@ -214,11 +236,9 @@ public class Utility {
 				for (k = (j + 1); k < array.length ; k++) {
 					int result = array[i] + array[j] + array[k];
 
-					if (result == 0) {
-						/*array[i] = array[j];
-						array[j] = array[k];
-						//found = true;
-*/						System.out.println("triplets are "+array[i]+" "+array[j]+" "+array[k]);
+					if (result == 0) 
+					{
+     					System.out.println("triplets are "+array[i]+" "+array[j]+" "+array[k]);
 						
 						triplets++;
 					}
@@ -234,8 +254,6 @@ public class Utility {
 
 		System.out.println(triplets + " count of triple ," + nontriplets + " count of not triple");
 
-		
-			//System.out.println("no triplet found.....");
 	}
 
 	
@@ -243,15 +261,14 @@ public class Utility {
 	/**
 	 * @param m for row
 	 * @param n for column
-	 * TWODARRAY 
+	 * TWODARRAY of integers, doubles, or booleans
 	 */
-	public static void twodarray(int m,int n)
+	public void twodarray(int m,int n)
 	{
 		
 		PrintWriter printwriter=new PrintWriter(System.out);
 		Twodarray9 tt=new Twodarray9();
 		
-		Scanner scanner=new Scanner(System.in);
 		Integer arrayInt[][] = new Integer[m][n];
 		Double arraydouble[][] = new Double[m][n];
 		Boolean arrayboolen[][] = new Boolean[m][n];
@@ -331,8 +348,8 @@ public class Utility {
 	}
 	
 	/**
-	 * @param t
-	 * @param v
+	 * @param t in Fahrenheit
+	 * @param v in miles per hour
 	 */
 	public void windchill(double t,double v)
 	{
@@ -387,13 +404,11 @@ public class Utility {
 	}
 	
 	
-		
-	//permutation
-	
 		/**
 		 * @param string
 		 * @param i
 		 * @param j
+		 * to return all permutation of a String
 		 */
 		public void permutation1(String string,int i,int j)
 		{
@@ -423,9 +438,10 @@ public class Utility {
 			return String.valueOf(character);
 		}
 	
-	
-	
-	//stopWtch
+		/**
+		 * @ Stopwatch Program for measuring the time that elapses between the start and end clicks
+
+		 */
 	
 	
 		long start=0;
@@ -461,10 +477,17 @@ public class Utility {
 			
 		}
 		
-	
-	
-	
-
-		
-	
+		public void tictactoe(int rows,int columns)
+		{
+			int array[][]=new int[rows][columns];
+			for (int i = 0; i < array.length; i++)
+			{
+				for (int j = 0; j < array.length; j++) 
+				{
+					System.out.print(array[i][j]+" ");
+				}
+				System.out.println();
+			}
+			
+		}
 }

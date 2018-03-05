@@ -1,34 +1,33 @@
 package com.bridgeit.programs;
 
-import java.util.Scanner;
-
 import com.bridgeit.utility.Utility;
-
+/******************************************************************************
+ *  Purpose:  Simulates a gambler who start with $stake to reach $goal. 
+ *  
+ *  @author  Poonam
+ *  @version 1.0
+ *  @since   05-03-2018
+ *
+ ******************************************************************************/
 public class Gambler {
 
 	public static void main(String[] args) 
 	{
-		Scanner scanner=new Scanner(System.in);
+		Utility utility =new Utility();
 		int stake;
 		System.out.println("enter stake");
-		stake=scanner.nextInt();
+		stake=utility.inputInteger();
 		
 		int goal;
 		System.out.println("enter goal");
-		goal=scanner.nextInt();
+		goal=utility.inputInteger();
 		
 		int time;
 		System.out.println("enter time");
-		time=scanner.nextInt();
+		time=utility.inputInteger();
 		
-		/* int won = 0,loss = 0;
-		   int beat = 0;
-		  */
-		
-
-		Utility utility=new Utility();
 		utility.gambler(stake, goal, time);
-		scanner.close();
+		
 	}
 
 }

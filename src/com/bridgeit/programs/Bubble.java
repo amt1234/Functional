@@ -1,5 +1,15 @@
 package com.bridgeit.programs;
 
+
+/******************************************************************************
+  
+ *  Purpose: Determines whether or not n is prime.
+ *
+ *  @author  BridgeLabz
+ *  @version 1.0
+ *  @since   06-08-2017
+ *
+ ******************************************************************************/
 public class Bubble {
 
 	public static void main(String[] args) {
